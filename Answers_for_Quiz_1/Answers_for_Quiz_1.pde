@@ -1,9 +1,13 @@
 float move = 0;
-float increase = 0.1f;
+float frequency = 0.08;
+float amplitude = 20;
+float frequencyIncrease = 0.01f;
+float amplitudeIncrease = 1.0f;
 void setup()
 {
   size(1280,720,P3D);
   camera(0, 0, -(height/2.0)/tan(PI*30.0/180.0), 0, 0, 0, 0, -1, 0);
+
  }
 
 void draw()
@@ -72,10 +76,20 @@ void drawSineWave()
   color blue = color(0, 0, 255); 
   fill(blue); 
   noStroke();
-  float frequency = 0.08;
-  float amplitude = 20;
+
   for(float x = -300; x <= 300; x += 0.1f)
     {
       circle(x, (float)Math.sin(x * frequency + move) * amplitude, 5);
     }
+}
+
+void keyPressed()
+{
+  if (key == CODED)
+  {
+    if (keyCode == UP) {amplitude += amplitudeIncrease;}
+    if (keyCode == DOWN) {amplitude -= amplitudeIncrease;} 
+    if (keyCode == RIGHT) {frequency += frequencyIncrease;} 
+    if (keyCode == LEFT) {frequency -= frequencyIncrease;} 
+  } 
 }
