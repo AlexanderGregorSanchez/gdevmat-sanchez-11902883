@@ -8,7 +8,7 @@ class Walker
     int r = int(random(256));
     int g = int(random(256));
     int b = int(random(256));
-    int a = int(random(100, 50));
+    int a = int(random(50, 100));
     color tint = color(r, g, b, a); 
     fill(tint); 
     stroke(tint);
