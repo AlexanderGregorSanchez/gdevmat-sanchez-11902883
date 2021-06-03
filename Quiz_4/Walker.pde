@@ -8,7 +8,6 @@ class walker
   public float g;
   public float b;
   
-  
   void render()
   {
     // Perlin Noise Size and Color
