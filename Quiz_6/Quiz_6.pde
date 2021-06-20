@@ -14,26 +14,35 @@ PVector mousePos()
 void draw()
 {
   background(130);
-  
-  strokeWeight(5);
-  stroke(255, 0, 0);
  
+  // Core
   PVector mouse = mousePos();
-
+  strokeWeight(3);
+  stroke(255);
   mouse.normalize();
   mouse.mult(300);
   line(0, 0, mouse.x, mouse.y);
-  println(mouse.mag()); // printing the magnitude of one side of the lightsaber
-  line(0, 0, mouse.x * -1, mouse.y * -1); // other side of lightsaber
+  println(mouse.mag());
+  line(0, 0, -mouse.x, -mouse.y); 
   
-  
-  
+  // Glow
+  PVector mouse1 = mousePos();
+  strokeWeight(10);
+  stroke(255, 0, 0, 90);
+  mouse1.normalize();
+  mouse1.mult(300);
+  line(0, 0, mouse1.x, mouse1.y);
+  line(0, 0, -mouse1.x, -mouse1.y); 
+ 
   // Handle
   PVector mouse2 = mousePos();
+  strokeWeight(10);
   stroke(0);
   mouse2.normalize();
   mouse2.mult(50);
   line(0, 0, mouse2.x, mouse2.y);
-  line(0, 0, mouse2.x * -1, mouse2.y * -1);
+  line(0, 0, -mouse2.x, -mouse2.y);
  
+  
+
 }
