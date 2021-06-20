@@ -23,7 +23,10 @@ void draw()
   mouse.normalize();
   mouse.mult(300);
   line(0, 0, mouse.x, mouse.y);
-  line(0, 0, mouse.x * -1, mouse.y * -1);
+  println(mouse.mag()); // printing the magnitude of one side of the lightsaber
+  line(0, 0, mouse.x * -1, mouse.y * -1); // other side of lightsaber
+  
+  
   
   // Handle
   PVector mouse2 = mousePos();
