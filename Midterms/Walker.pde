@@ -1,31 +1,19 @@
 class walker
 {
-  PVector position = new PVector();
-  PVector speed = new PVector();
-  PVector col = new PVector();
-  float scale;
-  
+  public PVector position = new PVector();
+  public PVector speed = new PVector();
+  public PVector col = new PVector();
+  public float scale;
+  public float alpha = 255;
+
   void render()
   {
     float r = col.x;
     float g = col.y;
     float b = col.z;
     noStroke();
-    fill(r,g,b);
+    fill(r,g,b,alpha);
     circle(position.x,position.y, scale);
   }
-  
-  void walk()
-  {
-    position.add(speed);
-  
-    if (position.x > Window.right || position.x < Window.left)
-    {
-      speed.x *= -1;
-    }
-    if (position.y > Window.top || position.y < Window.bottom)
-    {
-      speed.y *= -1;
-    }
-  }
+
 }
