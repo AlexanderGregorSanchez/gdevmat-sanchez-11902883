@@ -49,23 +49,6 @@ void draw()
     ball.update();
     ball.applyForce(wind);
     ball.applyForce(gravity);
-  
-  
-    if (ball.position.y <= Window.bottom)
-    {
-      ball.velocity.y *= -1;
-    }
-    if (ball.position.y >= Window.top)
-    {
-      ball.velocity.y *= -1;
-    }
-    if (ball.position.x >= Window.right)
-    {
-      ball.velocity.x *= -1;
-    }
-    if (ball.position.x <= Window.left)
-    {
-      ball.velocity.x *= -1;
-    }
+    ball.thirdLaw();
   }
 }
