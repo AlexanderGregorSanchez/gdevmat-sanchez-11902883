@@ -1,16 +1,3 @@
-/*
-
-  
-  
-  
-  
-
-Apply three forces to all walkers
-  wind (0.1, 0)
-  gravity (scaled out according to mass) (0, -0.15f * mass)
-  drag force when the walkers hit the liquid
-*/
-
 
 liquid ocean = new liquid(0, -100, Window.right, Window.bottom, 0.1f);
 Walker[] walker = new Walker[10];
